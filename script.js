@@ -40,6 +40,7 @@ function validar(){
         error=error+"Imagen no valida.";
     }
     if (error!=""){
+        document.getElementById("error").innerHTML=error;
         e.preventDefault();
         return false;
     }else{
