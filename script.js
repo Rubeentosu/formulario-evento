@@ -1,12 +1,10 @@
 window.onload = iniciar;
 
 function iniciar() {
-    console.log("hola");
     document.getElementById("enviar").addEventListener('click', validar, false);
 }
 
 function validar(e){
-    console.log("validar");
     let error="";
     if(!validarNombre(document.getElementById("nombre"))){
         error="Nombre no valido."
@@ -43,9 +41,6 @@ function validar(e){
         error=error+"Imagen no valida.";
     }
 
-    document.getElementById("error").innerHTML=error;
-        e.preventDefault();
-        return false;
     if (error!=""){
         document.getElementById("error").innerHTML=error;
         e.preventDefault();
@@ -56,7 +51,6 @@ function validar(e){
 }
 
 function validarNombre(nombre){
-    console.log("nombre");
     const rege = /[a-zA-Z0-9_.-]{4,20}/ ;
     return rege.test(nombre.value);
 }
