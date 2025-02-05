@@ -5,16 +5,21 @@ function iniciar() {
 }
 
 function validar(e){
-    console.log("hola");
     let error="";
     if(!validarNombre(document.getElementById("nombre"))){
         error="Nombre no valido."
+        document.getElementById("nombre").style.border="2px solid red";
+    }else{
+        document.getElementById("nombre").style.border="2px solid green";
     }
     if(!validarApellidos(document.getElementById("apellidos"))){
         if(error!=""){
             error=error+"<br>";
         }
         error=error+"Apellidos no validos.";
+        document.getElementById("apellidos").style.border="2px solid red";
+    }else{
+        document.getElementById("apellidos").style.border="2px solid green";
     }
     let edad=validarEdad(document.getElementById("edad"));
     if(edad!=""){
@@ -22,24 +27,36 @@ function validar(e){
             error=error+"<br>";
         }
         error=error+edad;
+        document.getElementById("edad").style.border="2px solid red";
+    }else{
+        document.getElementById("edad").style.border="2px solid green";
     }
     if(!validarEmail(document.getElementById("email"))){
         if(error!=""){
             error=error+"<br>";
         }
         error=error+"Email no valido.";
+        document.getElementById("email").style.border="2px solid red";
+    }else{
+        document.getElementById("email").style.border="2px solid green";
     }
     if(!validarProvincia(document.getElementById("provincia"))){
         if(error!=""){
             error=error+"<br>";
         }
         error=error+"Provincia no valida.";
+        document.getElementById("provincia").style.border="2px solid red";
+    }else{
+        document.getElementById("provincia").style.border="2px solid green";
     }
     if(!validarImg(document.getElementById("img"))){
         if(error!=""){
             error=error+"<br>";
         }
         error=error+"Imagen no valida.";
+        document.getElementById("img").style.border="2px solid red";
+    }else{
+        document.getElementById("img").style.border="2px solid green";
     }
     if (error!=""){
         document.getElementById("error").innerHTML=error;
@@ -73,7 +90,6 @@ function validarEdad(edad){
 }
 
 function validarEmail(email){
-    console.log(email.value);
     const rege = /^[a-zA-Z0-9_.-]+@[a-z0-9_-]+(\.[a-z]{2,4}){1,2}$/ ;
     return rege.test(email.value);
 }
@@ -84,8 +100,7 @@ function validarProvincia(provincia){
 }
 
 function validarImg(img){
-    let formato=img.value;
-    console.log(formato);
+    let formato=img.files[0].type;
     if (formato=="image/png"){
         return true;
     }
