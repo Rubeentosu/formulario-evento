@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <form action="procesar.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <br><br>
     
+        <label for="apellidos">Apellidos:</label>
+        <input type="text" id="apellidos" name="apellidos" required>
+        <br><br>
+    
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required>
+        <br><br>
+    
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+    
+        <label for="provincia">Provincia:</label>
+        <input type="text" id="provincia" name="provincia" required>
+        <br><br>
+        
+        <label for="img">Insertar Imagen</label>
+        <input type="file" name="img" required>
+        <br><br>
+    
+        <button type="submit" id="enviar">Enviar</button>
+    </form>
+    <p id="error"></p>
 </body>
 </html>
