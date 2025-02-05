@@ -5,6 +5,7 @@ function iniciar() {
 }
 
 function validar(e){
+    console.log("hola");
     let error="";
     if(!validarNombre(document.getElementById("nombre"))){
         error="Nombre no valido."
@@ -22,7 +23,7 @@ function validar(e){
         }
         error=error+edad;
     }
-    if(!validarApellidos(document.getElementById("email"))){
+    if(!validarEmail(document.getElementById("email"))){
         if(error!=""){
             error=error+"<br>";
         }
@@ -40,7 +41,6 @@ function validar(e){
         }
         error=error+"Imagen no valida.";
     }
-
     if (error!=""){
         document.getElementById("error").innerHTML=error;
         e.preventDefault();
@@ -56,7 +56,7 @@ function validarNombre(nombre){
 }
 
 function validarApellidos(apellidos){
-    const rege = /^[a-zA-Z0-9_.-]+@[a-z0-9_-]+(\.[a-z]{2,4}){1,2}$/ ;
+    const rege = /[a-zA-Z0-9_.-]{4,40}/ ;
     return rege.test(apellidos.value);
 }
 
@@ -73,6 +73,7 @@ function validarEdad(edad){
 }
 
 function validarEmail(email){
+    console.log(email.value);
     const rege = /^[a-zA-Z0-9_.-]+@[a-z0-9_-]+(\.[a-z]{2,4}){1,2}$/ ;
     return rege.test(email.value);
 }
@@ -83,7 +84,8 @@ function validarProvincia(provincia){
 }
 
 function validarImg(img){
-    let formato=img.type;
+    let formato=img.value;
+    console.log(formato);
     if (formato=="image/png"){
         return true;
     }
