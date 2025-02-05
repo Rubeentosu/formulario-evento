@@ -86,4 +86,4 @@ function validarImg(img){
         return true;
     }
     return false;
-} 
+}
