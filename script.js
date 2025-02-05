@@ -100,9 +100,11 @@ function validarProvincia(provincia){
 }
 
 function validarImg(img){
-    let formato=img.files[0].type;
-    if (formato=="image/png"){
-        return true;
+    if(img.value!=""){
+        let formato=img.files[0].type;
+        if (formato=="image/png"){
+            return true;
+        }
     }
     return false;
 }
