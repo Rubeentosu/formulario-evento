@@ -5,6 +5,7 @@ function iniciar() {
 }
 
 function validar(e){
+    requestAnimationFrame(validar);
     let error="";
     if(!validarNombre(document.getElementById("nombre"))){
         error="Nombre no valido."
